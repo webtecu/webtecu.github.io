@@ -1,10 +1,18 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset gaya default browser */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     color: #333;
+    line-height: 1.6;
 }
+
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -12,20 +20,27 @@ header {
     background-color: #0066cc;
     padding: 1em 2em;
     color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
 header .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
 }
+
 header nav a {
     margin: 0 1em;
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 header nav a:hover {
     color: #ffcc00;
 }
+
 header .cta-btn {
     background-color: #ffcc00;
     color: #0066cc;
@@ -34,23 +49,29 @@ header .cta-btn {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 header .cta-btn:hover {
     background-color: #e6b800;
 }
+
+/* Hero Section */
 .hero {
-    background-color: #0066cc;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 4em 2em;
     animation: fadeIn 2s ease-in;
 }
+
 .hero h1 {
     font-size: 2.5em;
     margin: 0.5em 0;
 }
+
 .hero p {
     font-size: 1.2em;
 }
+
 .hero .cta-btn {
     background-color: #ffcc00;
     color: #0066cc;
@@ -60,45 +81,73 @@ header .cta-btn:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .hero .cta-btn:hover {
     background-color: #e6b800;
 }
-.about, .features, .contact {
+
+/* Sections */
+section {
     padding: 2em;
     background-color: white;
     margin: 1em 0;
     animation: slideIn 1s ease-out;
 }
+
 .features {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
+
 .feature {
+    flex: 1 1 30%;
     text-align: center;
     padding: 1em;
+    margin: 1em;
     border: 1px solid #ccc;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    background-color: #fafafa;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .feature:hover {
     transform: scale(1.05);
-    border-color: #0066cc;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Contact Section */
+.contact a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #ffcc00;
+}
+
+/* Footer */
 footer {
     background-color: #0066cc;
     color: white;
     padding: 1em 2em;
     text-align: center;
 }
+
 footer .social-media a {
     margin: 0 0.5em;
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 footer .social-media a:hover {
     color: #ffcc00;
 }
+
+/* Animasi */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -107,6 +156,7 @@ footer .social-media a:hover {
         opacity: 1;
     }
 }
+
 @keyframes slideIn {
     from {
         transform: translateY(20px);
